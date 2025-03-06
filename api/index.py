@@ -8,6 +8,10 @@ from google.genai import types
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all origins
 
+@app.route('/', methods=['GET'])
+def test():
+    return "test"
+
 @app.route('/generate', methods=['POST'])
 def generate_endpoint():
     # Get prompt from request
